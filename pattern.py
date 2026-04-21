@@ -20,14 +20,17 @@ class AbstractClass(ABC):
 
     def base_operation2(self):
         print("AbstractClass says: But I let subclasses override some operations")
+    
+    def base_operation3(self):
+        print("AbstractClass says: I am doing the bulk of the work")
 
     @abstractmethod
     def required_operations1(self):
-        pass
-
+        raise NotImplementedError("Subclasses must implement required_operations1")
+    
     @abstractmethod
     def required_operations2(self):
-        pass
+        raise NotImplementedError("Subclasses must implement required_operations2")
 
     def hook1(self):
         print("Overridden Hook1")
@@ -42,7 +45,7 @@ class ConcreteClass1(AbstractClass):
     """
     def required_operations1(self):
         print("Implemented Operation1")
-
+    
     def required_operations2(self):
         print("Implemented Operation2")
 
@@ -53,7 +56,7 @@ class ConcreteClass2(AbstractClass):
     """
     def required_operations1(self):
         print("Implemented Operation1")
-
+    
     def required_operations2(self):
         print("Implemented Operation2")
 
