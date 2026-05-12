@@ -24,8 +24,12 @@
 | if в шаблонном методе     | `if self.hook_after_card(): self.after_card_bonus()` |
 
 
-serve_customer() — Шаблонный метод (скелет из 5 шагов)
-greet() / say_goodbye() — Конкретные методы (общие для всех)
-identify_needs() / offer_upsell() / ask_loyalty_card() — Абстрактные методы (обязательны для реализации)
-hook_after_card() — Хук-флаг (включает/выключает бонус)
-after_card_bonus() — Тело хука (что именно делать)
+- serve_customer() — Шаблонный метод (скелет из 5 шагов)
+
+- greet() / say_goodbye() — Конкретные методы (общие для всех)
+
+- identify_needs() / offer_upsell() / ask_loyalty_card() — Абстрактные методы (обязательны для реализации)
+
+- hook_after_card() — Хук-флаг (включает/выключает бонус)
+
+- after_card_bonus() — Тело хука (что именно делать)
