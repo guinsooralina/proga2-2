@@ -6,5 +6,26 @@
 - **Client**: Клиентский код, который работает с объектами через интерфейс абстрактного класса
 
 **Базовый паттерн:**
+
 <img width="793" height="802" alt="image" src="https://github.com/user-attachments/assets/2503d967-f891-49ae-9e19-edbf11aee4c1" />
+
+
+ **Функционал програмы:**
  
+| Элемент схемы              | Код                                         |
+|---------------------------|----------------------------------------------|
+| `AbstractClass`           | `SalesTemplate`                              |
+| `templateMethod()`        | `serve_customer()`                           |
+| `step1()`                 | `greet()`                                    |
+| `step2()`                 | `identify_needs()`                           |
+| `step3()`                 | `offer_upsell()`                             |
+| `step4()`                 | `ask_loyalty_card()`                         |
+| `ConcreteClass1`          | `Seller` (один продавец)                     |
+| if в шаблонном методе     | `if self.hook_after_card(): self.after_card_bonus()` |
+
+
+serve_customer() — Шаблонный метод (скелет из 5 шагов)
+greet() / say_goodbye() — Конкретные методы (общие для всех)
+identify_needs() / offer_upsell() / ask_loyalty_card() — Абстрактные методы (обязательны для реализации)
+hook_after_card() — Хук-флаг (включает/выключает бонус)
+after_card_bonus() — Тело хука (что именно делать)
